@@ -1,0 +1,12 @@
+nav{
+    height: 50px;
+    background-color: red;
+    color:white;
+}
+nav a{
+    font-size: 20px;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+
+}

@@ -1,0 +1,45 @@
+<main>
+    <h1>Catálogo de Livros</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Resumo</th>
+            <th scope="col">Editora</th>
+            <th scope="col">Autores</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let livro of livros">
+          <tr>
+            <td>{{livro.titulo}}<button class="btn bg-danger" (click)="excluir(this.livro.codigo)">Excluir</button></td>
+            <td>{{livro.resumo}}</td>
+            <td>{{obternome(this.livro.codEditora)}}</td>
+            <td>
+                <ul *ngFor="let autor of livro.autores">
+                    <li>{{autor}}</li>
+
+                </ul>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</main>
+
+
+<!-- <main id="conteudo">
+    <div style="width:100%; margin:10px;">
+        <h2 style="display:inline;">Listagem de produtos</h2>
+        <button style="float:right" (click)="incluir()">Novo Produto</button>
+        <hr />
+    </div>
+    <div class="container">
+        <div class="pnlProduto" *ngFor="let produto of produtos">
+            {{produto.codigo}}<br />
+            {{produto.nome}}<br />
+            Quantidade: {{produto.quantidade}}
+            <hr />
+            <button (click)="excluir(produto.codigo)">Excluir</button>
+        </div>
+    </div>
+</main>
+<app-lateral pagina="Listagem de produtos"></app-lateral> -->
