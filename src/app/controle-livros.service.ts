@@ -35,20 +35,14 @@ export class ControleLivrosService {
     return this.livros
   }
   adicionar(livro:Livro){
-    try{
-      var codigo:number =(this.livros.length -1);
-      livro.codigo = this.livros[codigo].codigo + 1;
-      this.livros.push(livro);
+    livro.codigo =(this.livros.length -1) + 2;
+    this.livros.push(livro);
   }
-    catch{
-      livro.codigo = 1;
-      this.livros.push(livro);
-    }
-  }
-  excluir(num:number){
-      var livroEncontrado = this.livros.findIndex((livro:Livro)=>{
-        return num == livro.codigo
+  excluir(num:Number){
+      this.livros.findIndex((temp:Livro, indice, livros)=>{
+        num == temp.codigo;
+        livros.splice(indice,1);
+        return livros
       });
-      this.livros.splice(livroEncontrado, 1)
   }
 }
